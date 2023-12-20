@@ -14,9 +14,9 @@ import { UserToMessage } from './messages/entities/user-to-message.entity';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      //host: 'host.docker.internal',
-      host: 'localhost',
-      port: 3306,
+      host: 'host.docker.internal',
+      // host: 'localhost',
+      port: parseInt(process.env.DB_PORT),
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       database: 'nestjs_messages',
